@@ -37,6 +37,7 @@ def get_all_products_price_range(min_price: float, max_price: float):
     results = []
 
     for product in Products:
-        results.append(product)
+        if min_price < product["Price"] < max_price:
+            results.append(product)
 
     return results
