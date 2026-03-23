@@ -8,8 +8,22 @@ Products = [{'Name': 'Apple', 'Price': 4.99, 'Type': 'Fruit'},
 
 from fastapi import FastAPI
 from typing import Union
+from pydantic import BaseModel
 
-app = FastAPI()
+class UserRequest(BaseModel):
+    user_id : str
+    last_name: str
+    first_name: Union[str, None] = None
+
+app = FastAPI(title = "Module 3 API",
+              version = "0.0.2",
+              contact = {"name": "Samuel Newbold", "email": "srnewbold17955@mail.mccneb.edu"},
+              description = "Introducing POST and swagger to API")
+
+
+@app.post("/user/mod/")
+def modify_user(user: UserRequest):
+    return f"it's working!{user.user_id}"
 
 @app.get("/product") #product endpoint
 def get_products(product_price: float, product_type: Union[str, None] = None, product_name: Union[str, None] = None):
