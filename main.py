@@ -22,3 +22,8 @@ class Product(BaseModel):
     Name: str
     Price: float
     Type: str
+
+
+@app.get("/products")
+def get_all_products():
+    return Products
