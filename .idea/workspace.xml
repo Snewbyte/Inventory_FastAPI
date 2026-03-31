@@ -5,13 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="121de465-ba51-405e-ba0a-3e3381402506" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Inventory_FastAPI.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_main.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2026-03-15T110311-1.404.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2026-03-15T110311.404.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main_controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/user_module.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/database_creator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/main_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,33 +33,53 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Snewbyte&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Snewbyte/Inventory_FastAPI.git&quot;,
+    &quot;accountId&quot;: &quot;ec33e98f-d246-4296-8dda-8b2a6d195b35&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="3AzLS3M7fD4ITL34xCguqI9802C" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "FastAPI.Inventory_FastAPI.executor": "Run",
-    "HTTP Request.All in test_main.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;FastAPI.Inventory_FastAPI.executor&quot;: &quot;Debug&quot;,
+    &quot;HTTP Request.All in test_main.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.database_creator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main_controller.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Assignment4&amp;&amp;5&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;SQL Dialects&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunDashboard">
     <option name="configurationStatuses">
       <map>
@@ -67,8 +93,26 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="FastAPI.Inventory_FastAPI">
+  <component name="RunManager">
     <configuration name="All in test_main" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/test_main.http">
+      <method v="2" />
+    </configuration>
+    <configuration name="All in test_main" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/test_main.http">
+      <method v="2" />
+    </configuration>
+    <configuration name="Inventory_FastAPI" type="Python.FastAPI">
+      <option name="file" value="$PROJECT_DIR$/main.py" />
+      <module name="Inventory_FastAPI" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
       <method v="2" />
     </configuration>
     <configuration name="Inventory_FastAPI" type="Python.FastAPI">
@@ -89,6 +133,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="HTTP Request.All in test_main" />
+        <item itemvalue="HTTP Request.All in test_main" />
       </list>
     </recent_temporary>
   </component>
@@ -107,14 +152,86 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1773590448637</updated>
-      <workItem from="1773590449677" duration="506000" />
+      <workItem from="1773590449677" duration="6380000" />
+      <workItem from="1774267722353" duration="8655000" />
+      <workItem from="1774987927451" duration="2705000" />
+      <workItem from="1774990665373" duration="360000" />
     </task>
+    <task id="LOCAL-00001" summary="First Commit and Push with assignment outline">
+      <option name="closed" value="true" />
+      <created>1773591237917</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1773591237917</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Got first get_products function working">
+      <option name="closed" value="true" />
+      <created>1773599699069</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1773599699069</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Finished second function">
+      <option name="closed" value="true" />
+      <created>1773609452723</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1773609452723</updated>
+    </task>
+    <task id="LOCAL-00004" summary="First commit after lecture video">
+      <option name="closed" value="true" />
+      <created>1774281414791</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1774281414791</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Part 1 &amp; 2 - Updates to swagger and global list.  Request object for POST methods using BaseModel.">
+      <option name="closed" value="true" />
+      <created>1774282031822</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1774282031822</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Part 3a - /products endpoint get request that returns all products">
+      <option name="closed" value="true" />
+      <created>1774282110086</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1774282110086</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Part 3b - POST endpoint product/mod can modify or create products in dictionary">
+      <option name="closed" value="true" />
+      <created>1774286589696</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1774286589696</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First Commit and Push with assignment outline" />
+    <MESSAGE value="Got first get_products function working" />
+    <MESSAGE value="Finished second function" />
+    <MESSAGE value="First commit after lecture video" />
+    <MESSAGE value="Part 1 &amp; 2 - Updates to swagger and global list.  Request object for POST methods using BaseModel." />
+    <MESSAGE value="Part 3a - /products endpoint get request that returns all products" />
+    <MESSAGE value="Part 3b - POST endpoint product/mod can modify or create products in dictionary" />
+    <option name="LAST_COMMIT_MESSAGE" value="Part 3b - POST endpoint product/mod can modify or create products in dictionary" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Inventory_FastAPI$Inventory_FastAPI.coverage" NAME="Inventory_FastAPI Coverage Results" MODIFIED="1773590577782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Inventory_FastAPI$main_controller.coverage" NAME="main_controller Coverage Results" MODIFIED="1774990045890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Inventory_FastAPI$Inventory_FastAPI.coverage" NAME="Inventory_FastAPI Coverage Results" MODIFIED="1774989139831" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Inventory_FastAPI$database_creator.coverage" NAME="database_creator Coverage Results" MODIFIED="1774990928222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services" />
   </component>
 </project>
