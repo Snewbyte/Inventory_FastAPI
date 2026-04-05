@@ -11,7 +11,7 @@ cur.execute('INSERT INTO USER VALUES (2, "Phoebe", "Buffay", "31", "France")')
 cur.execute('INSERT INTO USER VALUES (3, "Joe", "Tribbiani", "29", "Italy")')
 cur.execute('INSERT INTO USER VALUES (4, "Chandler", "Bing", "32", "Ireland")')
 cur.execute('INSERT INTO USER VALUES (5, "Monica", "Geller", "30", "USA")')
-cur.execute('INSERT INTO USER VALUES (6, "Xorf", "Frinklefarp", "30000", "Zorbex")')
+
 
 print(cur.execute('SELECT * from USER').fetchall())
 

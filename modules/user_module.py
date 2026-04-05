@@ -7,3 +7,11 @@ class User(BaseModel):
     LastName: str
     Age: str
     Country: str
+
+
+class UserRequest(BaseModel):
+    ID: int
+    FirstName: str
+    LastName: str
+    Age: str
+    Country: str

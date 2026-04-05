@@ -1,18 +1,8 @@
-from typing import Union
 from fastapi import FastAPI
-from pydantic import BaseModel
 from databases import Database
-import operator
 
-from modules.user_module import User
-from services.main_service import get_user_by_id_query, get_all_users_query, convert_data_to_module
-
-
-class UserRequest(BaseModel):
-    user_id: str
-    last_name: str
-    first_name: Union[str, None] = None
-
+from modules.user_module import User, UserRequest
+from services.main_service import get_user_by_id_query, get_all_users_query, convert_data_to_module, insert_new_user, update_user
 
 app = FastAPI(title='Module 4 API',
               version="0.0.2",
@@ -32,9 +22,20 @@ async def database_disconnect():
     await database.disconnect()
 
 
+
 @app.post("/user/mod/")
-def modify_user(user: UserRequest):
-    return f"New user {user.user_id}"
+async def modify_user(user: UserRequest):
+    results = await database.fetch_all(get_user_by_id_query(user.ID))  # Getting a user by id, will yield at least one if data exist
+    message = "" # create outside of if to use
+
+    if len(results) > 0: # call the update as we found one
+        await database.execute(update_user(user))  #  We are passing update user query from main_service
+        message = "Successfully updated user"
+    else: # nothing found so add new user
+        await database.execute(insert_new_user(user))  #  No data was found, we need to insert new data
+        message = "Successfully added a new user"
+
+    return message
 
 
 @app.get("/user")
