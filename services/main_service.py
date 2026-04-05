@@ -1,6 +1,6 @@
-from modules.product_module import Product, ProductRequest
+from modules.product_module import Product, ProductRequest, ProductTypeEnum
 
-# keep query in SQL functions so I know calls pertain to SQL queries
+# keep query in SQL functions, so I know calls pertain to SQL queries
 
 ##################### POST #####################
 
@@ -21,17 +21,17 @@ def get_all_products_query():
     return f'SELECT * FROM PRODUCTS'
 
 def get_products_price_range_query(min_price: float, max_price: float):
-    return f'SELECT * FROM PRODUCTS WHERE PRICE>{min_price} and PRICE<{max_price}'
+    return f'SELECT * FROM PRODUCTS WHERE {min_price} <= PRICE <= {max_price}'
 
-def search_products_query(price: float = None, type: str = None):
+def search_products_query(price: float = None, type: ProductTypeEnum = None):
     if price is not None and type is not None:
-        return f'SELECT * FROM PRODUCTS WHERE PRICE = {price} AND TYPE = "{type}"'
+        return f'SELECT * FROM PRODUCTS WHERE PRICE = {price} AND TYPE = "{type.value}"'
     elif price is not None:
         return f'SELECT * FROM PRODUCTS WHERE PRICE = {price}'
     elif type is not None:
-        return f'SELECT * FROM PRODUCTS WHERE TYPE = "{type}"'
+        return f'SELECT * FROM PRODUCTS WHERE TYPE = "{type.value}"'
     else:
-        return f'SELECT * FROM PRODUCTS'
+        return f'SELECT * FROM PRODUCTS'  # just return everything if neither is given
 
 
 ### CONVERT ###

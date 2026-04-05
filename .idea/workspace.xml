@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="121de465-ba51-405e-ba0a-3e3381402506" name="Changes" comment="First commit after initial setup">
-      <change afterPath="$PROJECT_DIR$/old_mains.py" afterDir="false" />
+    <list default="true" id="121de465-ba51-405e-ba0a-3e3381402506" name="Changes" comment="Expected output was not good. fixed SQL query in products search">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/user_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/user_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/database_creator.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/database_creator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/product_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/product_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_module.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/services/main_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/main_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,26 +53,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "FastAPI.Inventory_FastAPI.executor": "Debug",
-    "HTTP Request.All in test_main.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.database_creator.executor": "Run",
-    "Python.main_controller.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Assignment4&&5",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.externalResources",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;FastAPI.Inventory_FastAPI.executor&quot;: &quot;Debug&quot;,
+    &quot;HTTP Request.All in test_main.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.database_creator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main_controller.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main_service.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Assignment4&amp;&amp;5&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.externalResources&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\bigly\PycharmProjects\Inventory_FastAPI" />
@@ -92,7 +92,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="FastAPI.Inventory_FastAPI">
     <configuration name="All in test_main" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/test_main.http">
       <method v="2" />
     </configuration>
@@ -154,7 +154,8 @@
       <workItem from="1773590449677" duration="6380000" />
       <workItem from="1774267722353" duration="8655000" />
       <workItem from="1774987927451" duration="2705000" />
-      <workItem from="1774990665373" duration="8969000" />
+      <workItem from="1774990665373" duration="16839000" />
+      <workItem from="1775430116900" duration="1469000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit and Push with assignment outline">
       <option name="closed" value="true" />
@@ -220,7 +221,47 @@
       <option name="project" value="LOCAL" />
       <updated>1774991045709</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="commit after module 5 learning">
+      <option name="closed" value="true" />
+      <created>1775399486127</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1775399486127</updated>
+    </task>
+    <task id="LOCAL-00010" summary="commit after changing code from handling users to handling products">
+      <option name="closed" value="true" />
+      <created>1775401573751</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1775401573751</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added price range and search by price and/or type functions to main controller&#10;&#10;added &quot;query&quot; to functions involving SQL statements&#10;&#10;added products/prices endpoint in main_controller">
+      <option name="closed" value="true" />
+      <created>1775403058217</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1775403058217</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Created endpoints for assignment 5 part 3&#10;&#10;Expected output is good">
+      <option name="closed" value="true" />
+      <created>1775404839155</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1775404839155</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Expected output was not good. fixed SQL query in products search">
+      <option name="closed" value="true" />
+      <created>1775405229984</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1775405229984</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,11 +276,17 @@
     <MESSAGE value="Part 3a - /products endpoint get request that returns all products" />
     <MESSAGE value="Part 3b - POST endpoint product/mod can modify or create products in dictionary" />
     <MESSAGE value="First commit after initial setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit after initial setup" />
+    <MESSAGE value="commit after module 5 learning" />
+    <MESSAGE value="commit after changing code from handling users to handling products" />
+    <MESSAGE value="Added price range and search by price and/or type functions to main controller&#10;&#10;added &quot;query&quot; to functions involving SQL statements&#10;&#10;added products/prices endpoint in main_controller" />
+    <MESSAGE value="Created endpoints for assignment 5 part 3&#10;&#10;Expected output is good" />
+    <MESSAGE value="Expected output was not good. fixed SQL query in products search" />
+    <option name="LAST_COMMIT_MESSAGE" value="Expected output was not good. fixed SQL query in products search" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Inventory_FastAPI$main_controller.coverage" NAME="main_controller Coverage Results" MODIFIED="1774990045890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Inventory_FastAPI$main_service.coverage" NAME="main_service Coverage Results" MODIFIED="1775401297459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services" />
     <SUITE FILE_PATH="coverage/Inventory_FastAPI$Inventory_FastAPI.coverage" NAME="Inventory_FastAPI Coverage Results" MODIFIED="1774989139831" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/Inventory_FastAPI$database_creator.coverage" NAME="database_creator Coverage Results" MODIFIED="1774990928222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services" />
+    <SUITE FILE_PATH="coverage/Inventory_FastAPI$database_creator.coverage" NAME="database_creator Coverage Results" MODIFIED="1775401167726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services" />
   </component>
 </project>

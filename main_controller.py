@@ -1,11 +1,11 @@
 from fastapi import FastAPI
 from databases import Database
 
-from modules.product_module import Product, ProductRequest
+from modules.product_module import Product, ProductRequest, ProductTypeEnum
 from services.main_service import get_product_by_id_query, get_all_products_query, convert_data_to_module, insert_new_product_query, update_product_query, get_products_price_range_query, search_products_query
 from typing import List, Union
-app = FastAPI(title='Module 4 API',
-              version="0.0.2",
+app = FastAPI(title='Module 5 API',
+              version="0.0.4",
               contact={'name': 'Samuel Newbold', 'email': 'srnewbold17955@mail.mccneb.edu'},
               description='Fast API with databases')
 
@@ -59,7 +59,7 @@ async def get_products_price_range(min_price: float, max_price: float):
     return convert_data_to_module(results)
 
 @app.get("/products/search", response_model=List[Product])
-async def search_products(product_price: Union[float, None] = None, product_type: Union[str, None] = None):
+async def search_products(product_price: Union[float, None] = None, product_type: Union[ProductTypeEnum, None] = None):
     results = await database.fetch_all(search_products_query(product_price, product_type))
 
     return convert_data_to_module(results)
