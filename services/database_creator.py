@@ -2,18 +2,19 @@ import sqlite3 as sql
 
 conn = sql.connect('main.db')
 cur = conn.cursor()
-createTable = 'CREATE TABLE USER (ID INTEGER not null primary key, FIRST_NAME VARCHAR(30), LAST_NAME VARCHAR(30), AGE VARCHAR(30), COUNTRY VARCHAR(30))'
+createTable = 'CREATE TABLE PRODUCTS (ID INTEGER not null primary key, NAME VARCHAR(30), PRICE FLOAT, TYPE VARCHAR(30))'
+cur.execute('DROP TABLE IF EXISTS PRODUCTS')
 cur.execute(createTable)
 
-cur.execute('INSERT INTO USER VALUES (0, "Ross", "Geller", "32", "USA")')
-cur.execute('INSERT INTO USER VALUES (1, "Rachel", "Green", "30", "USA")')
-cur.execute('INSERT INTO USER VALUES (2, "Phoebe", "Buffay", "31", "France")')
-cur.execute('INSERT INTO USER VALUES (3, "Joe", "Tribbiani", "29", "Italy")')
-cur.execute('INSERT INTO USER VALUES (4, "Chandler", "Bing", "32", "Ireland")')
-cur.execute('INSERT INTO USER VALUES (5, "Monica", "Geller", "30", "USA")')
+cur.execute('INSERT INTO PRODUCTS VALUES (0, "Apple", 4.99, "Fruit")')
+cur.execute('INSERT INTO PRODUCTS VALUES (1, "Orange", 8.99, "Fruit")')
+cur.execute('INSERT INTO PRODUCTS VALUES (2, "Tomato", 3.99, "Fruit")')
+cur.execute('INSERT INTO PRODUCTS VALUES (3, "Cabbage", 1.99, "Vegetable")')
+cur.execute('INSERT INTO PRODUCTS VALUES (4, "Potato", 2.50, "Vegetable")')
+cur.execute('INSERT INTO PRODUCTS VALUES (5, "Carrots", 1.49, "Vegetable")')
 
 
-print(cur.execute('SELECT * from USER').fetchall())
+print(cur.execute('SELECT * from PRODUCTS').fetchall())
 
 conn.commit()
 conn.close()
