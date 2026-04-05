@@ -3,7 +3,7 @@ from databases import Database
 
 from modules.product_module import Product, ProductRequest
 from services.main_service import get_product_by_id_query, get_all_products_query, convert_data_to_module, insert_new_product_query, update_product_query, get_products_price_range_query, search_products_query
-from typing import List
+from typing import List, Union
 app = FastAPI(title='Module 4 API',
               version="0.0.2",
               contact={'name': 'Samuel Newbold', 'email': 'srnewbold17955@mail.mccneb.edu'},
@@ -23,7 +23,7 @@ async def database_disconnect():
 
 
 ##################### POST #####################
-@app.post("/product/mod/")
+@app.post("/products/mod/")
 async def modify_product(product: ProductRequest):
     results = await database.fetch_all(get_product_by_id_query(product.ID))  # Getting a product by id, will yield at least one if data exist
     message = "" # create outside of if to use
@@ -39,21 +39,28 @@ async def modify_product(product: ProductRequest):
 
 
 ##################### GET #####################
-@app.get("/products", response_model=List[Product])
+@app.get("/product", response_model=Product)
 async def get_product(product_id: int) -> Product:
     results = await database.fetch_all(get_product_by_id_query(product_id))
 
     # since convert_data_to_module returns a list we just need to return index 0
     return convert_data_to_module(results)[0]
 
-
-@app.get("/product/all", response_model=List[Product])
+@app.get("/products", response_model=List[Product])
 async def get_all_products():
-    results = await database.fetch_all(get_all_products())
+    results = await database.fetch_all(get_all_products_query())
 
     return convert_data_to_module(results)
 
-@app.get("/products/prices", response_model=List[Product])
+@app.get("/products/price", response_model=List[Product])
 async def get_products_price_range(min_price: float, max_price: float):
     results = await database.fetch_all(get_products_price_range_query(min_price, max_price))
+
     return convert_data_to_module(results)
+
+@app.get("/products/search", response_model=List[Product])
+async def search_products(product_price: Union[float, None] = None, product_type: Union[str, None] = None):
+    results = await database.fetch_all(search_products_query(product_price, product_type))
+
+    return convert_data_to_module(results)
+

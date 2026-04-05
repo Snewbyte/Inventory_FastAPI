@@ -17,7 +17,6 @@ def update_product_query(product_data : ProductRequest):
 def get_product_by_id_query(product_id):
     return f'SELECT * FROM PRODUCTS WHERE ID={product_id}'
 
-
 def get_all_products_query():
     return f'SELECT * FROM PRODUCTS'
 
