@@ -25,11 +25,11 @@ def get_products_price_range_query(min_price: float, max_price: float):
 
 def search_products_query(price: float = None, type: str = None):
     if price is not None and type is not None:
-        return f'SELECT * FROM PRODUCTS WHERE PRICE = {price} AND TYPE = {type}'
+        return f'SELECT * FROM PRODUCTS WHERE PRICE = {price} AND TYPE = "{type}"'
     elif price is not None:
         return f'SELECT * FROM PRODUCTS WHERE PRICE = {price}'
     elif type is not None:
-        return f'SELECT * FROM PRODUCTS WHERE TYPE = {type}'
+        return f'SELECT * FROM PRODUCTS WHERE TYPE = "{type}"'
     else:
         return f'SELECT * FROM PRODUCTS'
 
