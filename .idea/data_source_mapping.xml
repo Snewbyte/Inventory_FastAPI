@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$PROJECT_DIR$/services/database_creator.py" value="755b04f1-bd9e-46c5-951d-703276685698" />
+    <file url="file://$PROJECT_DIR$/services/main_service.py" value="755b04f1-bd9e-46c5-951d-703276685698" />
+  </component>
+</project>
