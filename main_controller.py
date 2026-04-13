@@ -1,13 +1,13 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException, status
 from databases import Database
 
-from modules.product_module import Product, ProductRequest, ProductTypeEnum
+from modules.product_module import Product, ProductRequest, ProductTypeEnum, ResponseMessage
 from services.main_service import get_product_by_id_query, get_all_products_query, convert_data_to_module, insert_new_product_query, update_product_query, get_products_price_range_query, search_products_query
 from typing import List, Union
-app = FastAPI(title='Module 5 API',
-              version="0.0.4",
+app = FastAPI(title='Module 6 API',
+              version="0.0.5",
               contact={'name': 'Samuel Newbold', 'email': 'srnewbold17955@mail.mccneb.edu'},
-              description='Fast API with databases')
+              description='Fast API with 200 and 400 responses')
 
 database = Database("sqlite:///services/main.db")
 
@@ -39,9 +39,21 @@ async def modify_product(product: ProductRequest):
 
 
 ##################### GET #####################
-@app.get("/product", response_model=Product)
+@app.get("/product", response_model=Product, responses={200:{"model":Product},400:{"model":ResponseMessage}})
 async def get_product(product_id: int) -> Product:
+    try:
+        int(product_id)
+    except:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Product ID must be a integer")
+
     results = await database.fetch_all(get_product_by_id_query(product_id))
+    if len(results) == 0:       # if id isn't valid query will return a empty list
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Product ID not found")
+
+    try:
+        int(product_id)
+    except:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Product ID must be a integer")
 
     # since convert_data_to_module returns a list we just need to return index 0
     return convert_data_to_module(results)[0]

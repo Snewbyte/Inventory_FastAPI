@@ -18,3 +18,6 @@ class ProductRequest(BaseModel):
     Name: str
     Price: float
     Type: ProductTypeEnum
+
+class ResponseMessage(BaseModel):
+    content: str
