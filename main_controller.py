@@ -49,23 +49,30 @@ async def get_product(product_id: int) -> Product:
   # since convert_data_to_module returns a list we just need to return index 0
     return convert_data_to_module(results)[0]
 
-@app.get("/products", response_model=List[Product])
+@app.get("/products", response_model=List[Product], responses={200:{"model":List[Product]},400:{"model":ResponseMessage}})
 async def get_all_products():
+
     results = await database.fetch_all(get_all_products_query())
     if len(results) == 0:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="No products found")
 
     return convert_data_to_module(results)
 
-@app.get("/products/price", response_model=List[Product])
+@app.get("/products/price", response_model=List[Product], responses={200:{"model":List[Product]},400:{"model":ResponseMessage}})
 async def get_products_price_range(min_price: float, max_price: float):
+
     results = await database.fetch_all(get_products_price_range_query(min_price, max_price))
+    if len(results) == 0:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="No products found in that range")
 
     return convert_data_to_module(results)
 
-@app.get("/products/search", response_model=List[Product])
+@app.get("/products/search", response_model=List[Product], responses={200:{"model":List[Product]},400:{"model":ResponseMessage}})
 async def search_products(product_price: Union[float, None] = None, product_type: Union[ProductTypeEnum, None] = None):
+
     results = await database.fetch_all(search_products_query(product_price, product_type))
+    if len(results) == 0:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="No products found with that criteria")
 
     return convert_data_to_module(results)
 
