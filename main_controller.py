@@ -41,26 +41,19 @@ async def modify_product(product: ProductRequest):
 ##################### GET #####################
 @app.get("/product", response_model=Product, responses={200:{"model":Product},400:{"model":ResponseMessage}})
 async def get_product(product_id: int) -> Product:
-    try:
-        int(product_id)
-    except:
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Product ID must be a integer")
 
     results = await database.fetch_all(get_product_by_id_query(product_id))
     if len(results) == 0:       # if id isn't valid query will return a empty list
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Product ID not found")
 
-    try:
-        int(product_id)
-    except:
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Product ID must be a integer")
-
-    # since convert_data_to_module returns a list we just need to return index 0
+  # since convert_data_to_module returns a list we just need to return index 0
     return convert_data_to_module(results)[0]
 
 @app.get("/products", response_model=List[Product])
 async def get_all_products():
     results = await database.fetch_all(get_all_products_query())
+    if len(results) == 0:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="No products found")
 
     return convert_data_to_module(results)
 

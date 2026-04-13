@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="121de465-ba51-405e-ba0a-3e3381402506" name="Changes" comment="Enumerated product types&#10;changed price range query logic">
-      <change beforePath="$PROJECT_DIR$/.idea/data_source_mapping.xml" beforeDir="false" />
+    <list default="true" id="121de465-ba51-405e-ba0a-3e3381402506" name="Changes" comment="First commit after module 6 lecture video">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/product_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/product_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/database_creator.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/database_creator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/main.db" beforeDir="false" afterPath="$PROJECT_DIR$/services/main.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +54,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "FastAPI.Inventory_FastAPI.executor": "Debug",
+    "FastAPI.Inventory_FastAPI.executor": "Run",
     "HTTP Request.All in test_main.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.database_creator.executor": "Run",
@@ -78,7 +78,7 @@
       <recent name="C:\Users\bigly\PycharmProjects\Inventory_FastAPI" />
     </key>
   </component>
-  <component name="RunManager" selected="FastAPI.Inventory_FastAPI">
+  <component name="RunManager">
     <configuration name="All in test_main" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/test_main.http">
       <method v="2" />
     </configuration>
@@ -255,7 +255,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775997293656</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="First commit after module 6 lecture video">
+      <option name="closed" value="true" />
+      <created>1776097232624</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1776097232624</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,7 +284,8 @@
     <MESSAGE value="Created endpoints for assignment 5 part 3&#10;&#10;Expected output is good" />
     <MESSAGE value="Expected output was not good. fixed SQL query in products search" />
     <MESSAGE value="Enumerated product types&#10;changed price range query logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Enumerated product types&#10;changed price range query logic" />
+    <MESSAGE value="First commit after module 6 lecture video" />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit after module 6 lecture video" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -296,6 +305,6 @@
     <SUITE FILE_PATH="coverage/Inventory_FastAPI$main_controller.coverage" NAME="main_controller Coverage Results" MODIFIED="1774990045890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Inventory_FastAPI$main_service.coverage" NAME="main_service Coverage Results" MODIFIED="1775401297459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services" />
     <SUITE FILE_PATH="coverage/Inventory_FastAPI$Inventory_FastAPI.coverage" NAME="Inventory_FastAPI Coverage Results" MODIFIED="1774989139831" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/Inventory_FastAPI$database_creator.coverage" NAME="database_creator Coverage Results" MODIFIED="1775490259111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services" />
+    <SUITE FILE_PATH="coverage/Inventory_FastAPI$database_creator.coverage" NAME="database_creator Coverage Results" MODIFIED="1776103192800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services" />
   </component>
 </project>
