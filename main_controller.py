@@ -1,13 +1,13 @@
 from fastapi import FastAPI, HTTPException, status
 from databases import Database
 
-from modules.product_module import Product, ProductRequest, ProductTypeEnum, ResponseMessage
+from modules.product_module import Product, ProductRequest, ResponseMessage
 from services.main_service import get_product_by_id_query, get_all_products_query, convert_data_to_module, insert_new_product_query, update_product_query, get_products_price_range_query, search_products_query
 from typing import List, Union
 app = FastAPI(title='Module 6 API',
               version="0.0.5",
               contact={'name': 'Samuel Newbold', 'email': 'srnewbold17955@mail.mccneb.edu'},
-              description='Fast API with 200 and 400 responses')
+              description='Fast API with 200 and 400 status codes')
 
 database = Database("sqlite:///services/main.db")
 
@@ -23,8 +23,12 @@ async def database_disconnect():
 
 
 ##################### POST #####################
-@app.post("/products/mod/")
+@app.post("/products/mod/", responses={200:{"model": str}, 400: {"model": ResponseMessage}})
 async def modify_product(product: ProductRequest):
+    # check empty fields
+    if product.Name == "" or product.Type == "":
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Name or type cannot be empty")
+
     results = await database.fetch_all(get_product_by_id_query(product.ID))  # Getting a product by id, will yield at least one if data exist
     message = "" # create outside of if to use
 
@@ -39,7 +43,7 @@ async def modify_product(product: ProductRequest):
 
 
 ##################### GET #####################
-@app.get("/product", response_model=Product, responses={200:{"model":Product},400:{"model":ResponseMessage}})
+@app.get("/product", response_model=Product, responses={200:{"model":str},400:{"model":ResponseMessage}})
 async def get_product(product_id: int) -> Product:
 
     results = await database.fetch_all(get_product_by_id_query(product_id))
@@ -68,7 +72,7 @@ async def get_products_price_range(min_price: float, max_price: float):
     return convert_data_to_module(results)
 
 @app.get("/products/search", response_model=List[Product], responses={200:{"model":List[Product]},400:{"model":ResponseMessage}})
-async def search_products(product_price: Union[float, None] = None, product_type: Union[ProductTypeEnum, None] = None):
+async def search_products(product_price: Union[float, None] = None, product_type: Union[str, None] = None):
 
     results = await database.fetch_all(search_products_query(product_price, product_type))
     if len(results) == 0:

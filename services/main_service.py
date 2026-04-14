@@ -1,4 +1,4 @@
-from modules.product_module import Product, ProductRequest, ProductTypeEnum
+from modules.product_module import Product, ProductRequest
 
 # keep query in SQL functions, so I know calls pertain to SQL queries
 
@@ -23,7 +23,7 @@ def get_all_products_query():
 def get_products_price_range_query(min_price: float, max_price: float):
     return f'SELECT * FROM PRODUCTS WHERE {min_price} <= PRICE <= {max_price}'
 
-def search_products_query(price: float = None, type: ProductTypeEnum = None):
+def search_products_query(price: float = None, type: str = None):
     if price is not None and type is not None:
         return f'SELECT * FROM PRODUCTS WHERE PRICE = {price} AND TYPE = "{type.value}"'
     elif price is not None:
