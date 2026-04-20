@@ -21,15 +21,15 @@ def get_all_products_query():
     return f'SELECT * FROM PRODUCTS'
 
 def get_products_price_range_query(min_price: float, max_price: float):
-    return f'SELECT * FROM PRODUCTS WHERE {min_price} <= PRICE <= {max_price}'
+    return f'SELECT * FROM PRODUCTS WHERE {min_price} <= PRICE AND PRICE <= {max_price}'
 
 def search_products_query(price: float = None, type: str = None):
     if price is not None and type is not None:
-        return f'SELECT * FROM PRODUCTS WHERE PRICE = {price} AND TYPE = "{type.value}"'
+        return f'SELECT * FROM PRODUCTS WHERE PRICE = {price} AND TYPE = "{type}"'
     elif price is not None:
         return f'SELECT * FROM PRODUCTS WHERE PRICE = {price}'
     elif type is not None:
-        return f'SELECT * FROM PRODUCTS WHERE TYPE = "{type.value}"'
+        return f'SELECT * FROM PRODUCTS WHERE TYPE = "{type}"'
     else:
         return f'SELECT * FROM PRODUCTS'  # just return everything if neither is given
 
