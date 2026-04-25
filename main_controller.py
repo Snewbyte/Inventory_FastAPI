@@ -4,8 +4,8 @@ from databases import Database
 from modules.product_module import Product, ProductRequest, ResponseMessage
 from services.main_service import get_product_by_id_query, get_all_products_query, convert_data_to_module, insert_new_product_query, update_product_query, get_products_price_range_query, search_products_query
 from typing import List, Union
-app = FastAPI(title='Module 7 API',
-              version="0.0.6",
+app = FastAPI(title='Module 8 API',
+              version="0.0.7",
               contact={'name': 'Samuel Newbold', 'email': 'srnewbold17955@mail.mccneb.edu'},
               description='Implementing Unit Tests in FastAPI',)
 
