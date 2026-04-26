@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="121de465-ba51-405e-ba0a-3e3381402506" name="Changes" comment="Merged branch 7 into master, created branch 8 and updated swagger ui">
+    <list default="true" id="121de465-ba51-405e-ba0a-3e3381402506" name="Changes" comment="added 401 responses to other endpoints">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/main.db" beforeDir="false" afterPath="$PROJECT_DIR$/services/main.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +54,7 @@
   "keyToString": {
     "FastAPI.Inventory_FastAPI.executor": "Run",
     "HTTP Request.All in test_main.executor": "Run",
+    "JavaScript Debug.GET-Caller.html.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.database_creator.executor": "Run",
     "Python.main_controller.executor": "Run",
@@ -77,11 +77,14 @@
       <recent name="C:\Users\bigly\PycharmProjects\Inventory_FastAPI" />
     </key>
   </component>
-  <component name="RunManager" selected="FastAPI.Inventory_FastAPI">
+  <component name="RunManager">
     <configuration name="All in test_main" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/test_main.http">
       <method v="2" />
     </configuration>
     <configuration name="All in test_main" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/test_main.http">
+      <method v="2" />
+    </configuration>
+    <configuration name="GET-Caller.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Inventory_FastAPI/GET-Caller.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="Inventory_FastAPI" type="Python.FastAPI">
@@ -116,7 +119,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.All in test_main" />
+        <item itemvalue="JavaScript Debug.GET-Caller.html" />
         <item itemvalue="HTTP Request.All in test_main" />
         <item itemvalue="HTTP Request.All in test_main" />
         <item itemvalue="HTTP Request.All in test_main" />
@@ -281,14 +284,85 @@
       <option name="project" value="LOCAL" />
       <updated>1777160558819</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="added html for post and get caller">
+      <option name="closed" value="true" />
+      <created>1777164204605</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1777164204605</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fixed app.add_middleware I didn't copy it right from the powerpoint slide">
+      <option name="closed" value="true" />
+      <created>1777164621656</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1777164621656</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Updated database_creator.py to have tokens table and 3 tokens">
+      <option name="closed" value="true" />
+      <created>1777165539984</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1777165539984</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Added get_token_query to main services">
+      <option name="closed" value="true" />
+      <created>1777166020425</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1777166020425</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Added helper function in main_controller to check tokens &#10;&#10;Put token check into product endpoint">
+      <option name="closed" value="true" />
+      <created>1777168280667</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1777168280667</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Updated unit tests to include tokens">
+      <option name="closed" value="true" />
+      <created>1777200794669</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1777200794669</updated>
+    </task>
+    <task id="LOCAL-00024" summary="added token validation check to other endpoints&#10;&#10;removed notes">
+      <option name="closed" value="true" />
+      <created>1777205740022</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1777205740022</updated>
+    </task>
+    <task id="LOCAL-00025" summary="updated Swagger UI">
+      <option name="closed" value="true" />
+      <created>1777205816577</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1777205816577</updated>
+    </task>
+    <task id="LOCAL-00026" summary="added 401 responses to other endpoints">
+      <option name="closed" value="true" />
+      <created>1777213591769</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1777213591769</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="First Commit and Push with assignment outline" />
     <MESSAGE value="Got first get_products function working" />
     <MESSAGE value="Finished second function" />
     <MESSAGE value="First commit after lecture video" />
@@ -305,7 +379,16 @@
     <MESSAGE value="First commit after module 6 lecture video" />
     <MESSAGE value="First commit after lecture video&#10;&#10;installed httpx&#10;&#10;created test_main_controller.py for unit testing&#10;&#10;installed pytest&#10;&#10;ran database_creator.py again to populate database for unit testing" />
     <MESSAGE value="Merged branch 7 into master, created branch 8 and updated swagger ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merged branch 7 into master, created branch 8 and updated swagger ui" />
+    <MESSAGE value="added html for post and get caller" />
+    <MESSAGE value="fixed app.add_middleware I didn't copy it right from the powerpoint slide" />
+    <MESSAGE value="Updated database_creator.py to have tokens table and 3 tokens" />
+    <MESSAGE value="Added get_token_query to main services" />
+    <MESSAGE value="Added helper function in main_controller to check tokens &#10;&#10;Put token check into product endpoint" />
+    <MESSAGE value="Updated unit tests to include tokens" />
+    <MESSAGE value="added token validation check to other endpoints&#10;&#10;removed notes" />
+    <MESSAGE value="updated Swagger UI" />
+    <MESSAGE value="added 401 responses to other endpoints" />
+    <option name="LAST_COMMIT_MESSAGE" value="added 401 responses to other endpoints" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -314,10 +397,6 @@
           <url>file://$PROJECT_DIR$/modules/product_module.py</url>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main_controller.py</url>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -325,7 +404,7 @@
     <SUITE FILE_PATH="coverage/Inventory_FastAPI$main_controller.coverage" NAME="main_controller Coverage Results" MODIFIED="1774990045890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Inventory_FastAPI$main_service.coverage" NAME="main_service Coverage Results" MODIFIED="1775401297459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services" />
     <SUITE FILE_PATH="coverage/Inventory_FastAPI$Inventory_FastAPI.coverage" NAME="Inventory_FastAPI Coverage Results" MODIFIED="1774989139831" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/Inventory_FastAPI$database_creator.coverage" NAME="database_creator Coverage Results" MODIFIED="1776806101555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services" />
+    <SUITE FILE_PATH="coverage/Inventory_FastAPI$database_creator.coverage" NAME="database_creator Coverage Results" MODIFIED="1777165513077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services" />
     <SUITE FILE_PATH="coverage/Inventory_FastAPI$.coverage" NAME=" Coverage Results" MODIFIED="1776727329938" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
