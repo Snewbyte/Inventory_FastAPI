@@ -67,7 +67,7 @@ async def get_product(product_id: int, request: Request) -> Product:
   # since convert_data_to_module returns a list we just need to return index 0
     return convert_data_to_module(results)[0]
 
-@app.get("/products", response_model=List[Product], responses={200:{"model":List[Product]},400:{"model":ResponseMessage}})
+@app.get("/products", response_model=List[Product], responses={200:{"model":List[Product]},400:{"model":ResponseMessage}, 401:{"model": ResponseMessage}})
 async def get_all_products(request: Request):
     await validate_token(request)
 
@@ -77,7 +77,7 @@ async def get_all_products(request: Request):
 
     return convert_data_to_module(results)
 
-@app.get("/products/price", response_model=List[Product], responses={200:{"model":List[Product]},400:{"model":ResponseMessage}})
+@app.get("/products/price", response_model=List[Product], responses={200:{"model":List[Product]},400:{"model":ResponseMessage}, 401:{"model": ResponseMessage}})
 async def get_products_price_range(min_price: float, max_price: float, request: Request):
     await validate_token(request)
     results = await database.fetch_all(get_products_price_range_query(min_price, max_price))
@@ -86,7 +86,7 @@ async def get_products_price_range(min_price: float, max_price: float, request: 
 
     return convert_data_to_module(results)
 
-@app.get("/products/search", response_model=List[Product], responses={200:{"model":List[Product]},400:{"model":ResponseMessage}})
+@app.get("/products/search", response_model=List[Product], responses={200:{"model":List[Product]},400:{"model":ResponseMessage}, 401:{"model": ResponseMessage}})
 async def search_products(request: Request, product_price: Union[float, None] = None, product_type: Union[str, None] = None):
     await validate_token(request)
     results = await database.fetch_all(search_products_query(product_price, product_type))
