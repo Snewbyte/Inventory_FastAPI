@@ -11,8 +11,12 @@ app = FastAPI(title='Module 8 API',
               description='Implementing Unit Tests in FastAPI',)
 
 # setting up middleware that helps validate headers
-#origins = ["*"]
-#app.add_middleware(CORSMiddleware, allow_origins=True, allow_methods=["*"], allow_headers=["*"])
+origins = ["*"]
+app.add_middleware( CORSMiddleware,
+                    allow_origins = origins,
+                    allow_credentials = True,
+                    allow_methods = ["*"],
+                    allow_headers = ["*"],)
 
 database = Database("sqlite:///services/main.db")
 
