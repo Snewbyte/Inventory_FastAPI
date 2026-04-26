@@ -8,7 +8,7 @@ from typing import List, Union
 app = FastAPI(title='Module 8 API',
               version="0.0.7",
               contact={'name': 'Samuel Newbold', 'email': 'srnewbold17955@mail.mccneb.edu'},
-              description='Implementing Unit Tests in FastAPI',)
+              description='Token Authorization in FastAPI',)
 
 # setting up middleware that helps validate headers
 origins = ["*"]
