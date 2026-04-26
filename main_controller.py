@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from databases import Database
 
 from modules.product_module import Product, ProductRequest, ResponseMessage
-from services.main_service import get_product_by_id_query, get_all_products_query, convert_data_to_module, insert_new_product_query, update_product_query, get_products_price_range_query, search_products_query
+from services.main_service import get_product_by_id_query, get_all_products_query, convert_data_to_module, insert_new_product_query, update_product_query, get_products_price_range_query, search_products_query, get_token_query
 from typing import List, Union
 app = FastAPI(title='Module 8 API',
               version="0.0.7",
@@ -20,7 +20,7 @@ app.add_middleware( CORSMiddleware,
 
 database = Database("sqlite:///services/main.db")
 
-tokens = ["abcdefg"]
+#tokens = ["abcdefg"]
 # tokens stored in api and when a user calls your endpoints they pass tokens in the header
 
 # generate token in database -> give to user -> user makes api call -> check for token and increment token counter for that user
@@ -46,6 +46,11 @@ async def database_connect():
 async def database_disconnect():
     await database.disconnect()
 
+async def validate_token(request: Request):
+    token = request.headers.get("Authorization")
+    results = await database.fetch_all(get_token_query(token))
+    if len(results) == 0:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Unauthorized Request")
 
 ##################### POST #####################
 @app.post("/products/mod/", responses={200:{"model": str}, 400: {"model": ResponseMessage}, 401:{"model": ResponseMessage}})
@@ -57,9 +62,6 @@ async def modify_product(product: ProductRequest, request: Request):
     results = await database.fetch_all(get_product_by_id_query(product.ID))  # Getting a product by id, will yield at least one if data exist
     message = "" # create outside of if to use
 
-    print(request.headers["Authorization"]) #if you want to see the full header remove ["Authorization"]
-    if request.headers["Authorization"] not in tokens:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail = "Unauthorized Request")
     if len(results) > 0: # call the update as we found one
         await database.execute(update_product_query(product))  #  We are passing update product query from main_service
         message = "Successfully updated product"
@@ -71,9 +73,9 @@ async def modify_product(product: ProductRequest, request: Request):
 
 
 ##################### GET #####################
-@app.get("/product", response_model=Product, responses={200:{"model":str},400:{"model":ResponseMessage}})
-async def get_product(product_id: int) -> Product:
-
+@app.get("/product", response_model=Product, responses={200:{"model":str},400:{"model":ResponseMessage},401:{"model": ResponseMessage}})
+async def get_product(product_id: int, request: Request) -> Product:
+    await validate_token(request)
     results = await database.fetch_all(get_product_by_id_query(product_id))
     if len(results) == 0:       # if id isn't valid query will return a empty list
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Product ID not found")
@@ -83,6 +85,7 @@ async def get_product(product_id: int) -> Product:
 
 @app.get("/products", response_model=List[Product], responses={200:{"model":List[Product]},400:{"model":ResponseMessage}})
 async def get_all_products():
+
 
     results = await database.fetch_all(get_all_products_query())
     if len(results) == 0:
