@@ -20,23 +20,6 @@ app.add_middleware( CORSMiddleware,
 
 database = Database("sqlite:///services/main.db")
 
-#tokens = ["abcdefg"]
-# tokens stored in api and when a user calls your endpoints they pass tokens in the header
-
-# generate token in database -> give to user -> user makes api call -> check for token and increment token counter for that user
-
-# header comes in key value format
-
-# we will make another table that contains a few tokens and keep them in an array
-# check if token is passed through header and check if it is active
-# if it is we return an object
-# if not we return not authorized status code
-# make sure swagger has updated status codes
-
-# "request" object vs request object
-# "request" object is something that is sent by the website to the api and contains information about the sender including headers
-# request object is and object developers define for passing data to the endpoint (ProductRequest in our case)
-
 @app.on_event("startup")
 async def database_connect():
     await database.connect()
@@ -55,6 +38,7 @@ async def validate_token(request: Request):
 ##################### POST #####################
 @app.post("/products/mod/", responses={200:{"model": str}, 400: {"model": ResponseMessage}, 401:{"model": ResponseMessage}})
 async def modify_product(product: ProductRequest, request: Request):
+    await validate_token(request)
     # check empty fields
     if product.Name == "" or product.Type == "":
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Name or type cannot be empty")
@@ -84,8 +68,8 @@ async def get_product(product_id: int, request: Request) -> Product:
     return convert_data_to_module(results)[0]
 
 @app.get("/products", response_model=List[Product], responses={200:{"model":List[Product]},400:{"model":ResponseMessage}})
-async def get_all_products():
-
+async def get_all_products(request: Request):
+    await validate_token(request)
 
     results = await database.fetch_all(get_all_products_query())
     if len(results) == 0:
@@ -94,8 +78,8 @@ async def get_all_products():
     return convert_data_to_module(results)
 
 @app.get("/products/price", response_model=List[Product], responses={200:{"model":List[Product]},400:{"model":ResponseMessage}})
-async def get_products_price_range(min_price: float, max_price: float):
-
+async def get_products_price_range(min_price: float, max_price: float, request: Request):
+    await validate_token(request)
     results = await database.fetch_all(get_products_price_range_query(min_price, max_price))
     if len(results) == 0:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="No products found in that range")
@@ -103,8 +87,8 @@ async def get_products_price_range(min_price: float, max_price: float):
     return convert_data_to_module(results)
 
 @app.get("/products/search", response_model=List[Product], responses={200:{"model":List[Product]},400:{"model":ResponseMessage}})
-async def search_products(product_price: Union[float, None] = None, product_type: Union[str, None] = None):
-
+async def search_products(request: Request, product_price: Union[float, None] = None, product_type: Union[str, None] = None):
+    await validate_token(request)
     results = await database.fetch_all(search_products_query(product_price, product_type))
     if len(results) == 0:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="No products found with that criteria")
