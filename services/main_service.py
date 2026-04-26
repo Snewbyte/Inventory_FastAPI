@@ -33,6 +33,8 @@ def search_products_query(price: float = None, type: str = None):
     else:
         return f'SELECT * FROM PRODUCTS'  # just return everything if neither is given
 
+def get_token_query(token: str):
+    return f'SELECT * FROM TOKENS WHERE token = "{token}"'
 
 ### CONVERT ###
 
